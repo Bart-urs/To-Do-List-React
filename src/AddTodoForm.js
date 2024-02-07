@@ -6,7 +6,7 @@ function AddTodoForm({ addTodo }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (task.trim()) {
-      addTodo(task); // Użyj funkcji addTodo przekazanej jako prop
+      addTodo(task); 
       setTask('');
     }
   };
@@ -19,7 +19,7 @@ function AddTodoForm({ addTodo }) {
         onChange={(e) => setTask(e.target.value)}
         placeholder="Dodaj nowe zadanie..."
       />
-      <button className="button-hover" type="submit">Dodaj Nowe Zadanie</button>
+      <button className="button-hover button-hover-new-post" type="submit">Dodaj Nowe Zadanie</button>
     </form>
   );
 }

@@ -42,8 +42,14 @@ button {
   color: white;
   transition: max-width 0.3s ease-in-out;
 }
+.button-hover-new-post {
+  background-color: #84c23d;
+  padding: 10px 15px;
+  transition: background-color .5s ease; 
+}
 .button-hover:hover {
   background-color: #4cae4c; 
+  transition: background-color .5s ease; 
 }
 .todo-checkbox {
   cursor: pointer;
@@ -88,6 +94,9 @@ input[type="checkbox"] {
   background-color: #f00; 
   color: #fff; 
 }
+.todo-item-size{
+  width: 85px;
+}
 .todo-text {
   max-width: 500px;
   display: inline-block; 
@@ -123,32 +132,29 @@ input[type="text"] {
   padding-left: 8px;
 } 
 
+.filter-button {
+  background-color: #5cb85c;
+}
+
+.filter-button.activeFilter {
+  background-color: red; 
+}
+
 @media (max-width: 640px) {
   .todo-text {
-    max-width: 450px; /* Mniejsza maksymalna szerokość dla ekranów 640px i mniejszych */
-  }
+    max-width: 450px; 
+ }
 }
 
 @media (max-width: 580px) {
   .todo-text {
-    max-width: 400px; /* Mniejsza maksymalna szerokość dla ekranów 640px i mniejszych */
+    max-width: 400px; 
   }
 }
 
 @media (max-width: 540px) {
   .todo-text {
-    max-width: 350px; 
-  }
-  button {
-    min-width: 50px;
-    margin: 0 10px 10px 0;
-    margin-left: 10px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #5cb85c;
-    color: white;
+    max-width: 380px; 
   }
 }
 

@@ -52,7 +52,7 @@ function TodoItem({
           Usuń
         </button>
         <button
-          className={`todo-important-button ${todo.isImportant ? 'button-important' : 'button-hover'}`}
+          className={`todo-item-size todo-important-button ${todo.isImportant ? 'button-important' : 'button-hover'}`}
           onClick={handleToggleImportant}
         >
           {todo.isImportant ? 'Nie ważne' : 'Ważne'}
