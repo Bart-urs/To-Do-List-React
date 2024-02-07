@@ -2,38 +2,37 @@
   text-align: center;
   font-family: 'Arial', sans-serif;
   max-width: 600px;
-  margin: 0 auto; /* Wyśrodkowuje cały kontener aplikacji */
+  margin: 0 auto; 
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 10px;
   background-color: #ffffff;
 }
-
 h1 {
   margin-bottom: 20px; 
 }
-
 ul {
   list-style: none;
   padding: 0;
-  margin: 0; /* Usuwa domyślny margines */
-  text-align: center; /* Wyśrodkowuje tekst elementów listy */
+  margin: 0; 
+  text-align: center;
 }
-
 ul li {
-  display: block; /* Każdy element listy jest elementem blokowym */
+  display: block; 
   margin-bottom: 10px;
   background-color: #f9f9f9;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-  width: 100%; /* Pełna szerokość kontenera ul */
-  box-sizing: border-box; /* Wlicza padding i border w całkowitą szerokość i wysokość elementu */
+  width: 100%; 
+  box-sizing: border-box; 
 }
-
+li.todo-item {
+  overflow: hidden;
+}
 button {
   min-width: 75px;
-  margin: 0 10px 20px 10px;
+  margin: 0 10px 10px 0;
   margin-left: 10px;
   padding: 5px 10px;
   border: none;
@@ -41,53 +40,115 @@ button {
   cursor: pointer;
   background-color: #5cb85c;
   color: white;
+  transition: max-width 0.3s ease-in-out;
 }
-
-button:hover {
-  background-color: #4cae4c;
+.button-hover:hover {
+  background-color: #4cae4c; 
 }
-
 .todo-checkbox {
   cursor: pointer;
   margin-right: 10px;
 }
-
+input[type="checkbox"] {
+  margin-right: 2rem;
+}
 .todo-item {
   display: flex;
-  align-items: center;
+  flex-direction: column; 
+  align-items: flex-start; 
   margin-bottom: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+  width: 100%;
+  box-sizing: border-box;
 }
-
+.todo-buttons {
+  display: flex;
+  justify-content: flex-end; 
+  width: 100%; 
+}
+.todo-done-button {
+  background-color: #5cb85c; 
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 8px; 
+  cursor: pointer;
+}
+.todo-done-button.todo-done {
+  background-color: #f44336; 
+}
+.button-active {
+  background-color: #007bff; 
+  color: white;
+}
+.button-important {
+  background-color: #f00; 
+  color: #fff; 
+}
 .todo-text {
-  flex-grow: 1;
-  margin-right: 10px; /* Dodaje trochę przestrzeni między tekstem a przyciskami */
-  overflow: hidden; /* Zapobiega wypływaniu tekstu */
-  text-overflow: ellipsis; /* Dodaje kropki (...) gdy tekst jest za długi */
-  white-space: nowrap; /* Zapobiega przenoszeniu tekstu do nowej linii */
+  max-width: 500px;
+  display: inline-block; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+  transition: max-width 0.3s ease-in-out;
 }
-
-.todo-remove-button {
-  margin-left: 10px;
+.todo-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px; 
+  width: 100%;
+  margin-top: 8px;
 }
-
-.todo-edit-button {
-  margin-left: 10px; 
-}
-
 .completed {
   text-decoration: line-through;
   color: red;
 }
-
 .filter-buttons-container {
   margin-bottom: 20px; 
 }
-
 input[type="text"] {
-  margin-bottom: 20px; /* Dodaje przestrzeń pod polem tekstowym */
+  margin-bottom: 20px; 
   padding: 10px;
   width: 100%;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+.todo-item-important {
+  border-left: 6px solid red;
+  padding-left: 8px;
+} 
+
+@media (max-width: 640px) {
+  .todo-text {
+    max-width: 450px; /* Mniejsza maksymalna szerokość dla ekranów 640px i mniejszych */
+  }
+}
+
+@media (max-width: 580px) {
+  .todo-text {
+    max-width: 400px; /* Mniejsza maksymalna szerokość dla ekranów 640px i mniejszych */
+  }
+}
+
+@media (max-width: 540px) {
+  .todo-text {
+    max-width: 350px; 
+  }
+  button {
+    min-width: 50px;
+    margin: 0 10px 10px 0;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #5cb85c;
+    color: white;
+  }
+}
+
